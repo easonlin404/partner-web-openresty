@@ -21,7 +21,6 @@ function P.access()
 	local cellPhone = cjson.new().decode(body_data).cellPhone
 	local partnerUserId = "telkomsel-" .. cellPhone
 
-
 	local res = ngx.location.capture("/internal/admin/partners/general/userProvision",
 	 	{ method = ngx.HTTP_POST,
 		 	body = '{"cellPhone": "'.. cellPhone ..'","partnerUserId":"'.. partnerUserId .. '"}'  })

@@ -1,0 +1,5 @@
+{
+  "telkomsel" : "luacode/telkomselPlugin",
+  "otherpartner" : "luacode/otherpartnerPlugin",
+  "newpartner" : "luacode/newpartnerPlugin"
+}

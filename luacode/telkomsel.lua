@@ -18,4 +18,5 @@ local res = ngx.location.capture("/internal/admin/partners/general/userProvision
 	 	body = '{"cellPhone": "'.. cellPhone ..'","partnerUserId":"'.. partnerUserId .. '"}'  })
 
 ngx.header.content_type = "application/json"
+
 ngx.say(res.body)
