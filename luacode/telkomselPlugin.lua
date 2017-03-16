@@ -2,7 +2,7 @@ local telkomselPlugin = ...
 
 local P = {}
 P.version = "1.0.0"
-_G[telkomselPlugin] = Process
+_G[telkomselPlugin] = P
 
 package.loaded[telkomselPlugin] = P
 

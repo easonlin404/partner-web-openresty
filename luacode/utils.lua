@@ -15,12 +15,4 @@ function string:split(delimiter)
    return result
 end
 
-function sayHello()
-   ngx.say("hello")
-end
 
-
-function yoyo()
-   ngx.say("xml")
-   ngx.exit(ngx.HTTP_OK)
-end

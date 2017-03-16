@@ -2,7 +2,7 @@ local otherpartnerPlugin = ...
 
 local P = {}
 
-_G[otherpartnerPlugin] = Process
+_G[otherpartnerPlugin] = P
 
 package.loaded[otherpartnerPlugin] = P
 

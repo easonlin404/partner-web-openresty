@@ -3,7 +3,7 @@
 --package.loaded["luacode/otherpartnerPlugin"] = nil
 --package.loaded["luacode/newpartnerPlugin"] = nil
 
-local plugins = "luacode/plugins.json"
+local plugins = "data/plugins.json"
 
 local f = io.open(plugins, "rb")
 local content = f:read("*all")
@@ -15,5 +15,5 @@ for plugin, filePath in pairs( json ) do
    print(plugin, filePath)
    package.loaded[filePath] = nil
 
-   ngx.say("reload ".. plugin .." success")
+   ngx.say("reload " .. filePath .. " success")
 end
