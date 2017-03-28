@@ -4,16 +4,19 @@
 			"partner-name": "telkomsel",
 			"api":[
 				{
-				"id":"1",
-				"api-name":"/admin/partners/telkomsel/userProvision",
-				"methods":["POST","GET"]	
+					"id":"1",
+					"api-name":"userProvision",
+					"methods":["POST","GET"],
+					"path":"/admin/partners/telkomsel/userProvision",
+					"server":"api_server"
 				},
 				{
-				"id":"2",
-				"api-name":"/admin/partners/telkomsel/useActivation",
-				"methods":["POST"]	
+					"id":"2",
+					"api-name":"useActivation",
+					"methods":["POST"],
+					"path":"/admin/partners/telkomsel/useActivation",
+					"server":"api_server"
 				}
-			
 			]
 		},
 		{
@@ -21,10 +24,11 @@
 			"api":[
 				{
 				"id":"1",
-				"api-name":"/admin/partners/otherpartner/userProvision",
-				"methods":["POST","GET"]	
+				"api-name":"userProvision",
+				"methods":["POST"],
+				"path":"/admin/partners/otherpartner/userProvision",
+				"server":"api_server"
 				}
-			
 			]
 		},
 		{
@@ -32,10 +36,11 @@
 			"api":[
 				{
 				"id":"1",
-				"api-name":"/admin/partners/newpartner/userProvision",
-				"methods":["POST"]	
+				"api-name":"userProvision",
+				"methods":["POST"],
+				"path":"/admin/partners/newpartner/userProvision",
+				"server":"api_server"
 				}
-			
 			]
 		}
 	]
