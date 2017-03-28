@@ -1,3 +1,5 @@
+local config = require("admin/partner-config")
+
 ngx.log(ngx.DEBUG, "Process admin api request")
 local path = ngx.var.request:split(" ")[2]
 local method = ngx.var.request:split(" ")[1]
@@ -10,27 +12,9 @@ ngx.log(ngx.DEBUG, "ApiName: " .. ngx.var.apiName)
 if method == "GET" then
   ngx.header.content_type = "application/json"
 
-  local plugins = "data/partner-api.json"
-  
-  local f = io.open(plugins, "rb")
-  local content = f:read("*all")
-  f:close()
-  
-  local json = cjson.new().decode(content)
-  
-  
-  local apiTab
-  
-  for _,partner in pairs( json.partner ) do
-    if partner["partner-name"] == ngx.var.partner then 
-       for _,api in pairs( partner.api ) do
-          if api["api-name"] == ngx.var.apiName then
-            apiTab = api
-          end
-       end
-       break
-    end
-  end
+
+  local apiTab =config.getApi()
+ 
   
   if apiTab == nil then
     local json = cjson.encode({
