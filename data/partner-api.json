@@ -6,11 +6,11 @@
 				{
 				"id":"1",
 				"api-name":"/admin/partners/telkomsel/userProvision",
-				"methods":["POST"]	
+				"methods":["POST","GET"]	
 				},
 				{
 				"id":"2",
-				"api-name":"/admin/partners/telkomsel/userProvision",
+				"api-name":"/admin/partners/telkomsel/useActivation",
 				"methods":["POST"]	
 				}
 			
