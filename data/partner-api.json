@@ -1,0 +1,42 @@
+{
+	"partner":[
+		{
+			"partner-name": "telkomsel",
+			"api":[
+				{
+				"id":"1",
+				"api-name":"/admin/partners/telkomsel/userProvision",
+				"methods":["POST"]	
+				},
+				{
+				"id":"2",
+				"api-name":"/admin/partners/telkomsel/userProvision",
+				"methods":["POST"]	
+				}
+			
+			]
+		},
+		{
+			"partner-name":"otherpartner",
+			"api":[
+				{
+				"id":"1",
+				"api-name":"/admin/partners/otherpartner/userProvision",
+				"methods":["POST","GET"]	
+				}
+			
+			]
+		},
+		{
+			"partner-name":"newpartner",
+			"api":[
+				{
+				"id":"1",
+				"api-name":"/admin/partners/newpartner/userProvision",
+				"methods":["POST"]	
+				}
+			
+			]
+		}
+	]
+}
