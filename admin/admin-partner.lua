@@ -8,7 +8,7 @@ ngx.log(ngx.DEBUG, "Partner: " .. ngx.var.partner)
 
 ngx.header.content_type = "application/json"
 
-local partnerTab =config.getPartner()
+local partnerTab =config.getPartner(ngx.var.partner)
 
 if partnerTab == nil then
   local json = cjson.encode({

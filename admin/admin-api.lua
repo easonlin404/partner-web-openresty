@@ -13,7 +13,7 @@ if method == "GET" then
   ngx.header.content_type = "application/json"
 
 
-  local apiTab =config.getApi()
+  local apiTab =config.getApi(ngx.var.partner, ngx.var.apiName)
  
   
   if apiTab == nil then
@@ -28,13 +28,12 @@ if method == "GET" then
 
 elseif method == "POST" then
   ngx.say("<p> POST /apis/{partner name}/{api name}  - add partner API </p>")
+  local apiTab;
+  
+  --TODO:
+  --Step1: Determine partner is exist?
+  -- exist, determine api is exist?
+  --  not exist, add apiTab
+  --  exit, msggage 'api exist'
+  -- not exit, message 'partner not exist //TODO: add parnter?!'
 end
-
-
-
-
-
-
-
-
-

@@ -7,6 +7,19 @@ _G[parnterConfig] = P
 package.loaded[parnterConfig] = P
 
 
+-- gloabl 
+local g_configTab
+
+function P.preload()
+  local plugins = "data/partner-api.json"
+  local f = io.open(plugins, "rb")
+  local content = f:read("*all")
+  f:close()
+
+  g_configTab = cjson.new().decode(content)
+
+end
+
 function reload()
   local plugins = "data/partner-api.json"
   local f = io.open(plugins, "rb")
@@ -16,13 +29,13 @@ function reload()
 end
 
 
-function P.getPartner()
+function P.getPartner(p)
   local json = cjson.new().decode(reload())
   
   local partnerTab
 
   for _,partner in pairs( json.partner ) do
-    if partner["partner-name"] == ngx.var.partner then
+    if partner["partner-name"] == p then
       partnerTab = partner
       break
     end
@@ -31,15 +44,15 @@ function P.getPartner()
 end
 
 
-function P.getApi()
+function P.getApi(partner,a)
   local json = cjson.new().decode(reload())
   
-  local partnerTab = P.getPartner()
+  local partnerTab = P.getPartner(partner)
   local apiTab
   
   if partnerTab ~= nil then
      for _,api in pairs( partnerTab.api ) do
-          if api["api-name"] == ngx.var.apiName then
+          if api["api-name"] == a then
             apiTab = api
             break
           end
@@ -47,5 +60,10 @@ function P.getApi()
   end
     
   return apiTab
+end
+
+
+function P.getApipath(path)
+  
 end
 
