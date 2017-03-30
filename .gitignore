@@ -1,1 +1,6 @@
 /logs/*
+
+#Eclipse gitignore
+.buildpath
+.project
+/.settings/*
